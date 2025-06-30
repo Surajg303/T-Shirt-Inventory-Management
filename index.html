@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inventory with T-Shirt Brands</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button id="themeToggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
+  <h1>Inventory & Customer Management</h1>
+
+  <div class="section">
+    <h2>Inventory</h2>
+    <input type="text" id="itemName" placeholder="Item Name">
+    <select id="itemBrand">
+      <option value="">Select Brand</option>
+      <option value="Nike">Nike</option>
+      <option value="Adidas">Adidas</option>
+      <option value="Puma">Puma</option>
+      <option value="Levi's">Levi's</option>
+      <option value="HRX">HRX</option>
+    </select>
+    <input type="number" id="itemStock" placeholder="Stock">
+    <button onclick="addInventory()">Add Item</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Brand</th>
+          <th>Stock</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="inventoryTable"></tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Customer</h2>
+    <input type="text" id="customerName" placeholder="Customer Name">
+    <button onclick="addCustomer()">Add Customer</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="customerTable"></tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Invoice</h2>
+    <select id="invoiceCustomer"><option value="">Select Customer</option></select>
+    <select id="invoiceItem"><option value="">Select Item</option></select>
+    <input type="number" id="invoiceQty" placeholder="Quantity">
+    <button onclick="generateInvoice()">Generate</button>
+    <button onclick="window.print()">🖨️ Print Invoice</button>
+    <div id="invoiceResult"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
